@@ -1,0 +1,31 @@
+{
+  "name": "expense-manager",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js --ignore client",
+    "client": "cd client && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IrisNg/Expense-Manager.git"
+  },
+  "author": "Iris Ng",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/IrisNg/Expense-Manager/issues"
+  },
+  "homepage": "https://github.com/IrisNg/Expense-Manager#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.17.1",
+    "pg": "^8.5.1"
+  },
+  "devDependencies": {
+    "concurrently": "^6.0.0"
+  }
+}
